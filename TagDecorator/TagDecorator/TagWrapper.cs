@@ -35,5 +35,10 @@ namespace TagDecorator
         {
             return this._tb.ToString(TagRenderMode.Normal);
         }
+
+        public Tags TagsUnclosed()
+        {
+            return new Tags(this._tb);
+        }
     }
 }

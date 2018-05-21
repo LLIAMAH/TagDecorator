@@ -16,6 +16,11 @@ namespace TagDecorator
             return new TagWrapper(tag);
         }
 
+        public static MvcHtmlString ToHtmlString(this TagWrapper tag)
+        {
+            return new MvcHtmlString(tag.ToString());
+        }
+
         public static TagWrapper SetText(this TagWrapper tag, string text)
         {
             tag.Tag.SetInnerText(text);
@@ -24,22 +29,65 @@ namespace TagDecorator
 
         public static TagWrapper AddCss(this TagWrapper tag, string css)
         {
-            tag.Tag.AddCssClass(css);
+            if (!string.IsNullOrEmpty(css))
+                tag.Tag.AddCssClass(css);
 
             return tag;
         }
 
         public static TagWrapper AddCss(this TagWrapper tag, string[] css)
         {
-            foreach (var s in css)
-                tag.AddCss(s);
+            if (css != null)
+                foreach (var s in css)
+                    tag.AddCss(s);
+
+            return tag;
+        }
+
+        public static TagWrapper AddCssIf(this TagWrapper tag, bool condition, string css)
+        {
+            if (condition)
+                tag.Tag.AddCssClass(css);
+
+            return tag;
+        }
+
+        public static TagWrapper AddCssIf(this TagWrapper tag, bool condition, string[] css)
+        {
+            foreach (var item in css)
+                tag.AddCssIf(condition, item);
 
             return tag;
         }
 
         public static TagWrapper AddId(this TagWrapper tag, string value)
         {
+            value = value.TrimStart(new[] { '#' });
             return tag.AddAttribute("id", value);
+        }
+
+        public static TagWrapper AddIdIf(this TagWrapper tag, bool condition, string value)
+        {
+            if (condition)
+                return tag.AddId(value);
+
+            return tag;
+        }
+
+        public static TagWrapper AddName(this TagWrapper tag, string value)
+        {
+            value = value.TrimStart(new[] { '#' });
+            return tag.AddAttribute("name", value);
+        }
+
+        public static TagWrapper AddType(this TagWrapper tag, string value)
+        {
+            return tag.AddAttribute("type", value);
+        }
+
+        public static TagWrapper AddReference(this TagWrapper tag, string reference)
+        {
+            return tag.AddAttribute("href", reference);
         }
 
         public static TagWrapper AddAttribute(this TagWrapper tag, string key, string value)
@@ -47,7 +95,17 @@ namespace TagDecorator
             if (string.IsNullOrEmpty(key))
                 throw new Exception("TagDecorator function AddAttribute error: key undefined");
 
-            tag.Attributes.Add(key, value);
+            if (!string.IsNullOrEmpty(value))
+                tag.Attributes.Add(key, value);
+
+            return tag;
+        }
+
+        public static TagWrapper AddAttributeIf(this TagWrapper tag, bool condition, string key, string value)
+        {
+            if (condition)
+                tag.AddAttribute(key, value);
+
             return tag;
         }
 
@@ -68,9 +126,18 @@ namespace TagDecorator
             return tag;
         }
 
+        public static TagWrapper AddAttributesIf(this TagWrapper tag, bool condition, string[][] data)
+        {
+            if (condition)
+                tag.AddAttributes(data);
+
+            return tag;
+        }
+
         public static TagWrapper InnerHtml(this TagWrapper tag, string html)
         {
-            tag.Tag.InnerHtml += html;
+            if (!string.IsNullOrEmpty(html))
+                tag.Tag.InnerHtml += html;
 
             return tag;
         }
@@ -85,7 +152,18 @@ namespace TagDecorator
 
         public static TagWrapper InnerHtml(this TagWrapper tag, TagWrapper innerTag)
         {
-            return tag.InnerHtml(innerTag.ToString());
+            if (innerTag != null)
+                tag.InnerHtml(innerTag.ToString());
+
+            return tag;
+        }
+
+        public static TagWrapper InnerHtmlIf(this TagWrapper tag, bool condition, TagWrapper innerTag)
+        {
+            if (condition)
+                tag.InnerHtml(innerTag);
+
+            return tag;
         }
 
         public static TagWrapper InnerHtml(this TagWrapper tag, TagWrapper[] innerTags)
