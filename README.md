@@ -19,14 +19,6 @@ Button: https://getbootstrap.com/docs/4.0/components/buttons/
 ```html
 <button type="button" class="btn btn-success">Success</button>
 ```
-New implementation:
-```C#
-var htmlString = "button".ToTag()
-                    .AddAttribute("type", "button")
-                    .AddCss(new[] {"btn", "btn-success"})
-                    .SetText("Success")
-                    .ToString();
-```
 Old implementation:
 ```C#
 var tb = new TagBuilder("button");
@@ -35,6 +27,14 @@ tb.AddCssClass("btn");
 tb.AddCssClass("btn-success");
 tb.SetInnerText("Success");
 var htmlString = tb.ToString(TagRenderMode.Normal);
+```
+New implementation:
+```C#
+var htmlString = "button".ToTag()
+                    .AddAttribute("type", "button")
+                    .AddCss(new[] {"btn", "btn-success"})
+                    .SetText("Success")
+                    .ToString();
 ```
   
 **Required result**  
@@ -48,26 +48,6 @@ Card: https://getbootstrap.com/docs/4.0/components/card/
      <a href="#" class="btn btn-primary">Go somewhere</a>
    </div>
  </div>
-```
-New implementation:
-```C#
-var htmlString = "div".ToTag()
-    .AddCss("card")
-    .AddAttribute("style", "width: 18rem;")
-    .InnerHtml(new []
-    {
-        "img".ToTag()
-            .AddCss("card-img-top")
-            .AddAttributes(new[] {new[] {"src", "..."}, new[] {"alt", "Card image cap"}}),
-        "div".ToTag()
-            .AddCss("card-body")
-            .InnerHtml(new []
-            {
-                "h5".ToTag().AddCss("card-title").SetText("Card title"),
-                "p".ToTag().AddCss("card-text").SetText("Some quick example text to build on the card title and make up the bulk of the card's content."),
-                "a".ToTag().AddCss(new[] {"btn", "btn-primary"}).AddAttribute("href", "#").SetText("Go somewhere")
-            })
-    }).ToString();
 ```
 Old implementation:
 ```C#
@@ -105,4 +85,24 @@ divMain.InnerHtml += img.ToString(TagRenderMode.Normal);
 divMain.InnerHtml += divBody.ToString(TagRenderMode.Normal);
 
 return divMain.ToString(TagRenderMode.Normal);
+```
+New implementation:
+```C#
+var htmlString = "div".ToTag()
+    .AddCss("card")
+    .AddAttribute("style", "width: 18rem;")
+    .InnerHtml(new []
+    {
+        "img".ToTag()
+            .AddCss("card-img-top")
+            .AddAttributes(new[] {new[] {"src", "..."}, new[] {"alt", "Card image cap"}}),
+        "div".ToTag()
+            .AddCss("card-body")
+            .InnerHtml(new []
+            {
+                "h5".ToTag().AddCss("card-title").SetText("Card title"),
+                "p".ToTag().AddCss("card-text").SetText("Some quick example text to build on the card title and make up the bulk of the card's content."),
+                "a".ToTag().AddCss(new[] {"btn", "btn-primary"}).AddAttribute("href", "#").SetText("Go somewhere")
+            })
+    }).ToString();
 ```
