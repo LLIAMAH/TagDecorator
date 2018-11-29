@@ -60,6 +60,24 @@ namespace TagDecorator
             return tag;
         }
 
+        public static TagWrapper AddData(this TagWrapper tag, string suffix, string value)
+        {
+            tag.AddAttribute($"data-{suffix}", value);
+            return tag;
+        }
+
+        public static TagWrapper AddAria(this TagWrapper tag, string suffix, string value)
+        {
+            tag.AddAttribute($"aria-{suffix}", value);
+            return tag;
+        }
+
+        public static TagWrapper AddRole(this TagWrapper tag, string value)
+        {
+            tag.AddAttribute("role", value);
+            return tag;
+        }
+
         public static TagWrapper AddId(this TagWrapper tag, string value)
         {
             value = value.TrimStart(new[] { '#' });
@@ -68,7 +86,7 @@ namespace TagDecorator
 
         public static TagWrapper AddIdIf(this TagWrapper tag, bool condition, string value)
         {
-            if (condition)
+            if(condition)
                 return tag.AddId(value);
 
             return tag;
@@ -152,7 +170,7 @@ namespace TagDecorator
 
         public static TagWrapper InnerHtml(this TagWrapper tag, TagWrapper innerTag)
         {
-            if (innerTag != null)
+            if(innerTag != null)
                 tag.InnerHtml(innerTag.ToString());
 
             return tag;
@@ -164,6 +182,11 @@ namespace TagDecorator
                 tag.InnerHtml(innerTag);
 
             return tag;
+        }
+
+        public static TagWrapper InnerHtml(this TagWrapper tag, List<TagWrapper> innerTags)
+        {
+            return tag.InnerHtml(innerTags.ToArray());
         }
 
         public static TagWrapper InnerHtml(this TagWrapper tag, TagWrapper[] innerTags)
