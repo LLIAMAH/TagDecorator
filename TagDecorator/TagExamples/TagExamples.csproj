@@ -154,6 +154,7 @@
   <ItemGroup>
     <Content Include="App_Data\Buttons\ButtonsCode.txt" />
     <Content Include="App_Data\Buttons\ButtonsHtml.txt" />
+    <Content Include="App_Data\reference.txt" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -238,6 +239,7 @@
     <Content Include="Views\Shared\HtmlCode.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ExampleTemplate.cshtml" />
     <Content Include="Views\Shared\CSharpCode.cshtml" />
+    <Content Include="Views\Buttons\Bs4ButtonsViewPartial.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

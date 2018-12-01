@@ -1,7 +1,9 @@
-﻿<pre class="cscode"><code><span class="key">public</span> <span class="key">static</span> MvcHtmlString Button(<span class="key">this</span> HtmlHelper html, <span class="key">string</span> text)
+﻿<pre class="cscode"><code><span class="key">public</span> <span class="key">static</span> MvcHtmlString Button(<span class="key">this</span> HtmlHelper html, <span class="key">string</span> text, <span class="key">string</span> cssClass)
 {
     <span class="key">return</span> <span class="str">"button"</span>.ToTag()
         .AddType(<span class="str">"button"</span>)
+        .AddCss(<span class="key">new</span>[] { <span class="str">"btn"</span>, cssClass })
+        .AddCss(cssClass)
         .SetText(text)
         .ToHtmlString();
 }</code></pre>
