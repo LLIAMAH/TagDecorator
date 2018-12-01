@@ -1,0 +1,17 @@
+﻿@model TagExamples.Models.ExampleTemplate
+
+@{
+    ViewBag.Title = "ButtonsExample";
+}
+
+<h2>ButtonsExample</h2>
+
+@Html.DisplayFor(m => m)
+<hr />
+<div class="row">
+    <div class="col">
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>
