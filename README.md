@@ -7,7 +7,10 @@ New solution:
 1. Write tag string name
 2. Use .ToTag() extension
 3. Continue use extensions to apply CSS classes and common attributes to tag.
-4. At the end just call .ToString() to get raw html string.
+4. At the end just call 
+4a. .ToString() to get raw html string.
+or
+4b. .ToHtmlString() to get System.Wb.Mvc.MvcHtmlString string instance.
 
 # Benefits
 1. Less code - approx on 1/3 after refactoring
