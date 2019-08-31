@@ -5,7 +5,7 @@ For some purpose it is required to create html tags by code and this procedure h
 Common procedure of the creation suppose to create TagBuilder instance and step-by-step changing it's parameters. 
 New solution: 
 1. Write tag string name
-2. Use .ToTag() extension
+2. Use .ToTag() extension (special to avoid mix between new extensions and old functions)
 3. Continue use extensions to apply CSS classes and common attributes to tag.
 4. At the end just call .ToString() to get raw html string or .ToHtmlString() to get System.Wb.Mvc.MvcHtmlString string instance
 
