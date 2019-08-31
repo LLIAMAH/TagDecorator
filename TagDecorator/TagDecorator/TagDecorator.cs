@@ -46,7 +46,7 @@ namespace TagDecorator
 
         public static TagWrapper AddCssIf(this TagWrapper tag, bool condition, string css)
         {
-            if (condition)
+            if (condition && !string.IsNullOrEmpty(css))
                 tag.Tag.AddCssClass(css);
 
             return tag;
@@ -54,39 +54,58 @@ namespace TagDecorator
 
         public static TagWrapper AddCssIf(this TagWrapper tag, bool condition, string[] css)
         {
-            foreach (var item in css)
-                tag.AddCssIf(condition, item);
+            if (css != null)
+                foreach (var item in css)
+                    tag.AddCssIf(condition, item);
 
             return tag;
         }
 
         public static TagWrapper AddData(this TagWrapper tag, string suffix, string value)
         {
+            if (string.IsNullOrEmpty(suffix))
+                return tag;            
+
+            if (string.IsNullOrEmpty(value))
+                return tag;
+
             tag.AddAttribute($"data-{suffix}", value);
             return tag;
         }
 
         public static TagWrapper AddAria(this TagWrapper tag, string suffix, string value)
         {
+            if (string.IsNullOrEmpty(suffix))
+                return tag;
+
+            if (string.IsNullOrEmpty(value))
+                return tag;
+
             tag.AddAttribute($"aria-{suffix}", value);
             return tag;
         }
 
         public static TagWrapper AddRole(this TagWrapper tag, string value)
         {
+            if (string.IsNullOrEmpty(value))
+                return tag;
+
             tag.AddAttribute("role", value);
             return tag;
         }
 
         public static TagWrapper AddId(this TagWrapper tag, string value)
         {
+            if (string.IsNullOrEmpty(value))
+                return tag;
+
             value = value.TrimStart(new[] { '#' });
             return tag.AddAttribute("id", value);
         }
 
         public static TagWrapper AddIdIf(this TagWrapper tag, bool condition, string value)
         {
-            if(condition)
+            if(condition && !string.IsNullOrEmpty(value))
                 return tag.AddId(value);
 
             return tag;
@@ -94,17 +113,26 @@ namespace TagDecorator
 
         public static TagWrapper AddName(this TagWrapper tag, string value)
         {
+            if (string.IsNullOrEmpty(value))
+                return tag;
+
             value = value.TrimStart(new[] { '#' });
             return tag.AddAttribute("name", value);
         }
 
         public static TagWrapper AddType(this TagWrapper tag, string value)
         {
+            if (string.IsNullOrEmpty(value))
+                return tag;
+
             return tag.AddAttribute("type", value);
         }
 
         public static TagWrapper AddReference(this TagWrapper tag, string reference)
         {
+            if (string.IsNullOrEmpty(reference))
+                return tag;
+
             return tag.AddAttribute("href", reference);
         }
 
@@ -129,17 +157,19 @@ namespace TagDecorator
 
         public static TagWrapper AddAttributes(this TagWrapper tag, string[][] data)
         {
-            foreach (var s in data)
-                if (s.Length == 2)
-                    tag.AddAttribute(s[0], s[1]);
+            if (data != null)
+                foreach (var s in data)
+                    if (s.Length == 2)
+                        tag.AddAttribute(s[0], s[1]);
 
             return tag;
         }
 
         public static TagWrapper AddAttributes(this TagWrapper tag, IDictionary<string, string> data)
         {
-            foreach (var s in data)
-                tag.AddAttribute(s.Key, s.Value);
+            if (data != null)
+                foreach (var s in data)
+                    tag.AddAttribute(s.Key, s.Value);
 
             return tag;
         }
