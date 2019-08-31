@@ -11,7 +11,7 @@ New solution:
 
 # Benefits
 1. Less code - approx on 1/3 after refactoring
-2. Simple to read.
+2. Cascade view of the elements: simple to read.
 
 # Examples
 **Required result**  
