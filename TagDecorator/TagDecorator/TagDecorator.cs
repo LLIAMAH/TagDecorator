@@ -224,6 +224,20 @@ namespace TagDecorator
         }
 
         /// <summary>
+        /// Add <c>for</c> attribute with value
+        /// </summary>
+        /// <param name="tag"><see cref="TagWrapper"/></param>
+        /// <param name="value">Type attribute value</param>
+        /// <returns>Changed <see cref="TagWrapper"/></returns>
+        public static TagWrapper AddFor(this TagWrapper tag, string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return tag;
+
+            return tag.AddAttribute("for", value);
+        }
+
+        /// <summary>
         /// Add "href" attribute with value
         /// </summary>
         /// <param name="tag"><see cref="TagWrapper"/></param>
