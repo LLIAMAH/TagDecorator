@@ -1,0 +1,68 @@
+﻿<pre class="cscode"><code><span class="key">public</span> <span class="key">static</span> MvcHtmlString InputGroup1(<span class="key">this</span> HtmlHelper html, <span class="key">string</span> inputText = <span class="str">"Username"</span>, <span class="key">string</span> addonText = <span class="str">"@"</span>)
+{
+    <span class="key">return</span> <span class="str">"div"</span>.ToTag()
+        .AddCss(<span class="key">new</span>[] {<span class="str">"input-group"</span>, <span class="str">"mb-3"</span>})
+        .InnerHtml(<span class="key">new</span>[]
+        {
+            <span class="str">"div"</span>.ToTag().AddCss(<span class="str">"input-group-prepend"</span>).InnerHtml(<span class="str">"span"</span>.ToTag().AddCss(<span class="str">"input-group-text"</span>)
+                .AddId(<span class="str">"basic-addon1"</span>).SetText(addonText)),
+            <span class="str">"input"</span>.ToTag().AddType(<span class="str">"text"</span>).AddCss(<span class="str">"form-control"</span>).AddAttribute(<span class="str">"placeholder"</span>, inputText)
+                .AddAria(<span class="str">"label"</span>, inputText).AddAria(<span class="str">"describedby"</span>, <span class="str">"basic-addon1"</span>)
+        })
+        .ToHtmlString();
+}
+
+<span class="key">public</span> <span class="key">static</span> MvcHtmlString InputGroup2(<span class="key">this</span> HtmlHelper html, <span class="key">string</span> inputText = <span class="str">"Recipient's username"</span>, <span class="key">string</span> spanValue= <span class="str">"@example.com"</span>)
+{
+    <span class="key">return</span> <span class="str">"div"</span>.ToTag()
+        .AddCss(<span class="key">new</span>[] {<span class="str">"input-group"</span>, <span class="str">"mb-3"</span>})
+        .InnerHtml(<span class="key">new</span>[]
+        {
+            <span class="str">"input"</span>.ToTag().AddType(<span class="str">"text"</span>).AddCss(<span class="str">"form-control"</span>).AddAttribute(<span class="str">"placeholder"</span>, inputText)
+                .AddAria(<span class="str">"label"</span>, inputText).AddAria(<span class="str">"describedby"</span>, <span class="str">"basic-addon2"</span>),
+            <span class="str">"div"</span>.ToTag().AddCss(<span class="str">"input-group-append"</span>).InnerHtml(<span class="str">"span"</span>.ToTag().AddCss(<span class="str">"input-group-text"</span>)
+                .AddId(<span class="str">"basic-addon2"</span>).SetText(spanValue))
+        })
+        .ToHtmlString();
+}
+
+<span class="key">public</span> <span class="key">static</span> MvcHtmlString InputGroup3Label(<span class="key">this</span> HtmlHelper html, <span class="key">string</span> text = <span class="str">"Your vanity URL"</span>)
+{
+    <span class="key">return</span> <span class="str">"label"</span>.ToTag().AddFor(<span class="str">"basic-url"</span>).SetText(text).ToHtmlString();
+}
+
+<span class="key">public</span> <span class="key">static</span> MvcHtmlString InputGroup3Source(<span class="key">this</span> HtmlHelper html, <span class="key">string</span> spanParameter = <span class="str">"https://example.com/users/"</span>)
+{
+    <span class="key">return</span> <span class="str">"div"</span>.ToTag()
+        .AddCss(<span class="key">new</span>[] { <span class="str">"input-group"</span>, <span class="str">"mb-3"</span> })
+        .InnerHtml(<span class="key">new</span>[]
+        {
+            <span class="str">"div"</span>.ToTag().AddCss(<span class="str">"input-group-prepend"</span>).InnerHtml(<span class="str">"span"</span>.ToTag().AddCss(<span class="str">"input-group-text"</span>).AddId(<span class="str">"basic-addon3"</span>).SetText(spanParameter)),
+            <span class="str">"input"</span>.ToTag().AddType(<span class="str">"text"</span>).AddCss(<span class="str">"form-control"</span>).AddId(<span class="str">"basic-url"</span>).AddAria(<span class="str">"describedby"</span>,<span class="str">"basic-addon3"</span>)
+        })
+        .ToHtmlString();
+}
+
+<span class="key">public</span> <span class="key">static</span> MvcHtmlString InputGroup4(<span class="key">this</span> HtmlHelper html, <span class="key">string</span> spanParameter1 = <span class="str">"$"</span>, <span class="key">string</span> spanParameter2 = <span class="str">".00"</span>, <span class="key">string</span> inputText= <span class="str">"Amount (to the nearest dollar)"</span>)
+{
+    <span class="key">return</span> <span class="str">"div"</span>.ToTag()
+        .AddCss(<span class="key">new</span>[] { <span class="str">"input-group"</span>, <span class="str">"mb-3"</span> })
+        .InnerHtml(<span class="key">new</span>[]
+        {
+            <span class="str">"div"</span>.ToTag().AddCss(<span class="str">"input-group-prepend"</span>).InnerHtml(<span class="str">"span"</span>.ToTag().AddCss(<span class="str">"input-group-text"</span>).SetText(spanParameter1)),
+            <span class="str">"input"</span>.ToTag().AddType(<span class="str">"text"</span>).AddCss(<span class="str">"form-control"</span>).AddAria(<span class="str">"label"</span>,inputText),
+            <span class="str">"div"</span>.ToTag().AddCss(<span class="str">"input-group-append"</span>).InnerHtml(<span class="str">"span"</span>.ToTag().AddCss(<span class="str">"input-group-text"</span>).SetText(spanParameter2)),
+        })
+        .ToHtmlString();
+}
+
+<span class="key">public</span> <span class="key">static</span> MvcHtmlString InputGroup5(<span class="key">this</span> HtmlHelper html, <span class="key">string</span> spanParameter = <span class="str">"With textarea"</span>)
+{
+    <span class="key">return</span> <span class="str">"div"</span>.ToTag().AddCss( <span class="str">"input-group"</span>)
+        .InnerHtml(<span class="key">new</span>[]
+        {
+            <span class="str">"div"</span>.ToTag().AddCss(<span class="str">"input-group-prepend"</span>).InnerHtml(<span class="str">"span"</span>.ToTag().AddCss(<span class="str">"input-group-text"</span>).SetText(spanParameter)),
+            <span class="str">"textarea"</span>.ToTag().AddCss(<span class="str">"form-control"</span>).AddAria(<span class="str">"label"</span>,spanParameter)
+        })
+        .ToHtmlString();
+}</code></pre>
