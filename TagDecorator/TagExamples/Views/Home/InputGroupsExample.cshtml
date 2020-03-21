@@ -1,0 +1,19 @@
+﻿@model TagExamples.Models.ExampleTemplate
+
+@{
+    ViewBag.Title = "Bootstrap 4 InputGroups example";
+}
+
+<h2>Bootstrap 4 input groups example</h2>
+<hr />
+@Html.Alert(AlertsEx.Bs4AlertType.Warning, "This is a slightly unsuccessful example of how C# code can be larger than HTML-code, but at the same time it retains an important property: in the case of typos in the code, most of the page display is not broken.")
+
+@Html.DisplayFor(m => m)
+<hr />
+<div class="row">
+    <div class="col">
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>
