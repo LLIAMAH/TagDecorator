@@ -37,9 +37,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptTarget>ESNext</TypeScriptTarget>
     <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
-    <TypeScriptModuleKind />
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
