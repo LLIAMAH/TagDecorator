@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
 
 namespace TagExamples.Models
 {
@@ -10,6 +9,8 @@ namespace TagExamples.Models
         public string CodeView { get; set; }
         [Display(Name = "HTML:")]
         public string HtmlView { get; set; }
+        [Display(Name = "Razor:")]
+        public string RazorView { get; set; }
 
         [Display(Name = "Result:")]
         public string ResultView { get; set; }

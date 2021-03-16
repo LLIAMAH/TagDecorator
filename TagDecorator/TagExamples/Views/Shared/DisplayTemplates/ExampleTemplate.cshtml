@@ -15,25 +15,16 @@
 </div>
 <div class="row">
     <div class="col-6">
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.HtmlView)
-            </dt>
-
-            <dd>
-                @Html.Partial("HtmlCode", Model.HtmlView)
-            </dd>
-        </dl>
+        @Html.Accordion(new CollapsesEx.AccordionBlock("htmlCodeView", new List<CollapsesEx.AccordionCard>()
+        {
+            new CollapsesEx.AccordionCard("Html...", HttpUtility.HtmlDecode(Model.HtmlView), true)
+        }))
     </div>
     <div class="col-6">
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.CodeView)
-            </dt>
-
-            <dd>
-                @Html.Partial("CSharpCode", Model.CodeView)
-            </dd>
-        </dl>
+        @Html.Accordion(new CollapsesEx.AccordionBlock("cSharpCodeView", new List<CollapsesEx.AccordionCard>()
+        {
+            new CollapsesEx.AccordionCard("Razor...", Model.RazorView, true),
+            new CollapsesEx.AccordionCard("C# Code...", Html.Partial("CSharpCode", Model.CodeView).ToString())
+        }))
     </div>
 </div>

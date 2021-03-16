@@ -1,0 +1,8 @@
+﻿<pre style="margin:0em; overflow:auto; background-color:#ffffff;"><code style="font-family:Consolas,&quot;Courier New&quot;,Courier,Monospace; font-size:10pt; color:#000000;">@Html.Alert(<span style="color:#a31515;">"A simple primary alert—check it out!"</span>, Bs4StandardColors.Primary)
+@Html.Alert(<span style="color:#a31515;">"A simple primary alert—check it out!"</span>, Bs4StandardColors.Secondary)
+@Html.Alert(<span style="color:#a31515;">"A simple primary alert—check it out!"</span>, Bs4StandardColors.Success)
+@Html.Alert(<span style="color:#a31515;">"A simple primary alert—check it out!"</span>, Bs4StandardColors.Danger)
+@Html.Alert(<span style="color:#a31515;">"A simple primary alert—check it out!"</span>, Bs4StandardColors.Warning)
+@Html.Alert(<span style="color:#a31515;">"A simple primary alert—check it out!"</span>, Bs4StandardColors.Info)
+@Html.Alert(<span style="color:#a31515;">"A simple primary alert—check it out!"</span>, Bs4StandardColors.Light)
+@Html.Alert(<span style="color:#a31515;">"A simple primary alert—check it out!"</span>, Bs4StandardColors.Dark)</code></pre>

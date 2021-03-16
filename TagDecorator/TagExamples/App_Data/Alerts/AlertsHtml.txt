@@ -1,0 +1,25 @@
+﻿<pre style="color:#000000;background:#ffffff;"><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert alert-primary"</span><span style="color:#274796; "> role</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert"</span><span style="color:#a65700; ">&gt;</span>
+  A simple primary alert check it out!
+&lt;<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert alert-secondary"</span><span style="color:#274796; "> role</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert"</span><span style="color:#a65700; ">&gt;</span>
+  A simple secondary alert check it out!
+&lt;<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert alert-success"</span><span style="color:#274796; "> role</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert"</span><span style="color:#a65700; ">&gt;</span>
+  A simple success alert check it out!
+&lt;<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert alert-danger"</span><span style="color:#274796; "> role</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert"</span><span style="color:#a65700; ">&gt;</span>
+  A simple danger alert check it out!
+&lt;<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert alert-warning"</span><span style="color:#274796; "> role</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert"</span><span style="color:#a65700; ">&gt;</span>
+  A simple warning alert check it out!
+&lt;<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert alert-info"</span><span style="color:#274796; "> role</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert"</span><span style="color:#a65700; ">&gt;</span>
+  A simple info alert check it out!
+&lt;<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert alert-light"</span><span style="color:#274796; "> role</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert"</span><span style="color:#a65700; ">&gt;</span>
+  A simple light alert check it out!
+&lt;<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert alert-dark"</span><span style="color:#274796; "> role</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"alert"</span><span style="color:#a65700; ">&gt;</span>
+  A simple dark alert check it out!
+&lt;<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+</pre>

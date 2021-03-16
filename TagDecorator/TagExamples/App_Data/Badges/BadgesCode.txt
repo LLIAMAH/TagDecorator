@@ -1,0 +1,40 @@
+﻿<pre style="color:#000000;background:#ffffff;"><span style="color:#800000; font-weight:bold; ">public</span> <span style="color:#800000; font-weight:bold; ">enum</span> BadgeType
+<span style="color:#800080; ">{</span>
+    Normal<span style="color:#808030; ">,</span>
+    Pill
+<span style="color:#800080; ">}</span>
+
+<span style="color:#800000; font-weight:bold; ">public</span> <span style="color:#800000; font-weight:bold; ">static</span> MvcHtmlString Badge<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span> HtmlHelper html<span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">string</span> text<span style="color:#808030; ">,</span> 
+    Bs4StandardColors badgeType <span style="color:#808030; ">=</span> Bs4StandardColors<span style="color:#808030; ">.</span>Secondary<span style="color:#808030; ">,</span> BadgeType type <span style="color:#808030; ">=</span> BadgeType<span style="color:#808030; ">.</span>Normal<span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">span</span><span style="color:#800000; ">"</span><span style="color:#808030; ">.</span>ToTag<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>
+        <span style="color:#808030; ">.</span>AddCss<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">new</span><span style="color:#808030; ">[</span><span style="color:#808030; ">]</span> <span style="color:#800080; ">{</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge</span><span style="color:#800000; ">"</span><span style="color:#808030; ">,</span> GetBadgeTypeCss<span style="color:#808030; ">(</span>type<span style="color:#808030; ">)</span><span style="color:#808030; ">,</span> GetBadgeColorCss<span style="color:#808030; ">(</span>badgeType<span style="color:#808030; ">)</span><span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+        <span style="color:#808030; ">.</span>SetText<span style="color:#808030; ">(</span>text<span style="color:#808030; ">)</span>
+        <span style="color:#808030; ">.</span>ToHtmlString<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+
+<span style="color:#800000; font-weight:bold; ">private</span> <span style="color:#800000; font-weight:bold; ">static</span> <span style="color:#800000; font-weight:bold; ">string</span> GetBadgeColorCss<span style="color:#808030; ">(</span>Bs4StandardColors badgeColor<span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#800000; font-weight:bold; ">switch</span> <span style="color:#808030; ">(</span>badgeColor<span style="color:#808030; ">)</span>
+    <span style="color:#800080; ">{</span>
+        <span style="color:#800000; font-weight:bold; ">case</span> Bs4StandardColors<span style="color:#808030; ">.</span>Primary<span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge-primary</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">case</span> Bs4StandardColors<span style="color:#808030; ">.</span>Secondary<span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge-secondary</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">case</span> Bs4StandardColors<span style="color:#808030; ">.</span>Success<span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge-success</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">case</span> Bs4StandardColors<span style="color:#808030; ">.</span>Danger<span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge-danger</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">case</span> Bs4StandardColors<span style="color:#808030; ">.</span>Warning<span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge-warning</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">case</span> Bs4StandardColors<span style="color:#808030; ">.</span>Info<span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge-info</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">case</span> Bs4StandardColors<span style="color:#808030; ">.</span>Light<span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge-light</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">case</span> Bs4StandardColors<span style="color:#808030; ">.</span>Dark<span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge-dark</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">default</span><span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge-primary</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+    <span style="color:#800080; ">}</span>
+<span style="color:#800080; ">}</span>
+
+<span style="color:#800000; font-weight:bold; ">private</span> <span style="color:#800000; font-weight:bold; ">static</span> <span style="color:#800000; font-weight:bold; ">string</span> GetBadgeTypeCss<span style="color:#808030; ">(</span>BadgeType type<span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#800000; font-weight:bold; ">switch</span> <span style="color:#808030; ">(</span>type<span style="color:#808030; ">)</span>
+    <span style="color:#800080; ">{</span>
+        <span style="color:#800000; font-weight:bold; ">case</span> BadgeType<span style="color:#808030; ">.</span>Pill<span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">badge-pill</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#800000; font-weight:bold; ">default</span><span style="color:#808030; ">:</span> <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; font-weight:bold; ">string</span><span style="color:#808030; ">.</span>Empty<span style="color:#800080; ">;</span>
+    <span style="color:#800080; ">}</span>
+<span style="color:#800080; ">}</span>
+</pre>

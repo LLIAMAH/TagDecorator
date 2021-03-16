@@ -26,7 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -37,6 +37,19 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -143,13 +156,22 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AlertsEx.cs" />
+    <Compile Include="Helpers\BadgesEx.cs" />
+    <Compile Include="Helpers\Bs4Enums.cs" />
     <Compile Include="Helpers\ButtonEx.cs" />
+    <Compile Include="Helpers\CollapsesEx.cs" />
     <Compile Include="Helpers\InputGroupsEx.cs" />
     <Compile Include="Models\ExampleTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Alerts\AlertsCode.txt" />
+    <Content Include="App_Data\Alerts\AlertsHtml.txt" />
+    <Content Include="App_Data\Alerts\AlertsRazor.txt" />
+    <Content Include="App_Data\Badges\BadgesCode.txt" />
+    <Content Include="App_Data\Badges\BadgesHtml.txt" />
+    <Content Include="App_Data\Badges\BadgesRazor.txt" />
     <Content Include="App_Data\Buttons\ButtonsCode.txt" />
     <Content Include="App_Data\Buttons\ButtonsHtml.txt" />
     <Content Include="App_Data\InputGroups\InputGroupsCode.txt" />
@@ -310,6 +332,11 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\InputGroupsExample.cshtml" />
     <Content Include="Views\InputGroups\Bs4InputGroupsViewPartial.cshtml" />
+    <Content Include="Views\Alerts\Bs4AlertsViewPartial.cshtml" />
+    <Content Include="Views\Home\AlertsExample.cshtml" />
+    <Content Include="Views\Home\BadgesExample.cshtml" />
+    <Content Include="Views\Badges\Bs4BadgesViewPartial.cshtml" />
+    <Content Include="Views\Shared\RazorCode.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
