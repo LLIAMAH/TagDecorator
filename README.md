@@ -5,13 +5,13 @@ For some purpose it is required to create html tags by code and this procedure h
 Common procedure of the creation suppose to create TagBuilder instance and step-by-step changing it's parameters. 
 New solution: 
 1. Write tag string name
-2. Use .ToTag() extension
+2. Use .ToTag() extension (special to avoid mix between new extensions and old functions)
 3. Continue use extensions to apply CSS classes and common attributes to tag.
-4. At the end just call .ToString() to get raw html string.
+4. At the end just call .ToString() to get raw html string or .ToHtmlString() to get System.Wb.Mvc.MvcHtmlString string instance
 
 # Benefits
 1. Less code - approx on 1/3 after refactoring
-2. Simple to read.
+2. Cascade view of the elements: simple to read.
 
 # Examples
 **Required result**  
