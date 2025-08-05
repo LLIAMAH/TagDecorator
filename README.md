@@ -106,3 +106,7 @@ var htmlString = "div".ToTag()
             })
     }).ToString();
 ```
+
+P.S.
+Updated jQuery to version 3.7.1 to remove Dependabot alerts
+Updated bootstrap up to 5.3.7
